@@ -1,0 +1,3 @@
+# Programming_Club_Website
+Official website for our programming club of Brooklyn College. Developed using HTML, CSS, JavaScript and Firebase. Just open the index file with your browser to get started.
+Still in progress...
