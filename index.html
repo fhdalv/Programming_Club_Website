@@ -8,6 +8,7 @@
 		<meta name="author" content="Fahad Alvi">
 		<title>Programming Club | Welcome</title>
 		<link rel="stylesheet" href="./css/style.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	</head>
 	<body>
 		<header>
@@ -26,10 +27,43 @@
 		</header>
 
 		<section id="showcase">
-			<div class="container">
-				<div class="slider">
-				<h1>Join us and learn new things</h1>
-				<p>Even though you're absolute beginner!</p>
+			<div class="slider">
+				<div class="slides">
+			<!---	<h1>Join us and learn new things</h1>
+				<p>Even though you're absolute beginner!</p> --->
+				<input type="radio" name="radio-btn" id="radio1">
+				<input type="radio" name="radio-btn" id="radio2">
+				<input type="radio" name="radio-btn" id="radio3">
+				<input type="radio" name="radio-btn" id="radio4">
+
+				<div class="slide first">
+				 <img src="./img/back1.jpeg" alt="">
+				</div>
+				<div class="slide">
+					<img src="./img/back2.png" alt="">
+				</div>
+				<div class="slide">
+					<img src="./img/back3.png" alt="">
+				</div>
+				<div class="slide">
+					<img src="./img/back5.jpeg" alt="">
+				</div>
+
+				<div class="navigation-auto">
+					<div class="auto-btn1"></div>
+					<div class="auto-btn1"></div>
+					<div class="auto-btn1"></div>
+					<div class="auto-btn1"></div>		
+				</div>
+				<div class="navigation-manual">
+					<label for="radio1" class="manual-btn"></label>
+					<label for="radio2" class="manual-btn"></label>
+					<label for="radio3" class="manual-btn"></label>
+					<label for="radio4" class="manual-btn"></label>
+					
+				</div>
+
+
 				</div>
 			</div>
 			
@@ -59,7 +93,7 @@
 					<h3>Fahad Alvi</h3>
 					<h6><b>Co-Founder of BC Programming Club</h6>
 					<p><i>Follow the dark! You need light to borrow.<br/>Follow the Sun! You’ll make it tomorrow.</i></p>
-				</div>
+				</div> 
 				<div class="box">
 					<img src="./img/Navin.jpg">
 					<h3>Navin Koirala</h3>
@@ -80,8 +114,15 @@
 
 
 	<!--- Scripts --->
-	<script>
-
+	<script type="text/javascript">
+		var counter = 1;
+		setInterval(function(){
+			document.getElementById('radio' + counter).checked = true;
+			counter++;
+			if(counter > 4){
+				counter = 1;
+			}
+		}, 5000);
 	</script>
 
 	</body>
