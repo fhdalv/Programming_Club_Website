@@ -8,7 +8,14 @@ const pass2 = document.getElementById('signup-password2');
 form.addEventListener('submit', (e) => {
 	e.preventDefault();
 	checkInputs();
-	console.log(username.value);
+	const email = form['signup-email'].value;
+	const password = form['signup-password2'].value;
+
+	auth.createUserWithEmailAndPassword(email, password).then(cred => {
+		console.log(cred);
+		form.reset();
+		window.location.replace("index.html");
+	})
 });
 
 function checkInputs() {
@@ -36,6 +43,8 @@ function checkInputs() {
  		if(passVal1 === '') {
  			setErrorFor(pass1, 'Password cannot be empty!');
 
+ 		} else if(passVal1.length < 6){
+ 			setErrorFor(pass1, 'Password length must be at least 6 or more characters!');
  		} else {
  			setSuccessFor(pass1);
  			}

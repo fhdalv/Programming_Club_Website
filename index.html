@@ -21,7 +21,8 @@
 						<li class="current"><a href="index.html">Home</a></li>
 						<li><a href="about.html">About</a></li>
 						<li><a href="login.html">Sign In</a></li>
-						<li><a href="register.html">New? Sign Up</a></li>
+						<li><a href="register.html">Register</a></li>
+						<li><a href="#" id="logout">Logout</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -115,6 +116,12 @@
 
 
 	<!--- Scripts --->
+	<script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-firestore.js"></script>
+	<script src="firebase.js"></script>
+	<script src="logout.js"></script>
+
 	<script type="text/javascript">
 		var counter = 1;
 		setInterval(function(){
