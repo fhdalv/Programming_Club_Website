@@ -12,10 +12,15 @@ form.addEventListener('submit', (e) => {
 	const password = form['signup-password2'].value;
 
 	auth.createUserWithEmailAndPassword(email, password).then(cred => {
-		console.log(cred);
+		return db.collection('users').doc(cred.user.uid).set({
+			bio: form['signup-bio'].value
+		});
+		
+	}).then(() => {
 		form.reset();
 		window.location.replace("index.html");
-	})
+	});
+
 });
 
 function checkInputs() {
