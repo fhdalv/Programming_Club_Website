@@ -18,16 +18,25 @@
 				<nav>
 					<ul>
 						<li ><a href="index.html">Home</a></li>
-						<li class="current"><a href="about.html">About</a></li>
+						<li ><a href="about.html">About</a></li>
+						<li ><a href="services.html">Blogs</a></li>
 						<li><a href="event.html">Events</a></li>
-                        <li><a href="index.html">Services</a></li>
+						<li class="current"><a href="contact.html">Contact</a></li>
+						<li class="logged-out" style="display: none;"><a href="login.html">Sign In</a></li>
+						<li class="logged-out" style="display: none;"><a href="register.html">Register</a></li>
+						<li class="logged-in" style="display: none;"><a href="#" id="logout">Logout</a></li>
+						<li class="logged-in" style="display: none;"><div class="account-details"></div></li>
 					</ul>
 				</nav>
 			</div>
 		</header>
-		<h1>Contact us</h1>
-		<p>If you have any questions, comments or concerns, please reach out us at anytime.
-		</p>
+		<section id="main">
+			<div class="container">
+				<h1>Contact us</h1>
+				<p>CONTENTS AND FORM WILL BE HERE</p>
+			</div>	
+		</section>
+		
 
 
 		
@@ -39,6 +48,13 @@
 				<small>by BC Programming Club Team</small>
 			</p>
 		</footer>
+
+	<script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-firestore.js"></script>
+	<script src="firebase.js"></script>
+	<script src="logout.js"></script>
+	<script src="blogs.js"></script>
 
 	</body>
 </html>
