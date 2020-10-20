@@ -1,3 +1,5 @@
+const quoteList = document.querySelector('.quote');
+const darkList = document.querySelector('.dark');
 const accountDetails = document.querySelector('.account-details');
 const newsLetter = document.querySelector('.news');
 const email = document.getElementById('news-email');

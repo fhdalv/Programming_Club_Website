@@ -8,6 +8,7 @@
 		<meta name="author" content="Fahad Alvi">
 		<title>Programming Club | About</title>
 		<link rel="stylesheet" href="./css/style.css">
+		<link rel="stylesheet" href="./css/chat.css">
 	</head>
 	<body>
 		<header>
@@ -34,14 +35,66 @@
 
 
 		<section id="newsletter">
-		
+			<div class="container">
+				<h1>Subscribe to our Newsletter</h1>
+				<form class="news">
+					<input type="email" id="news-email" placeholder="Enter your Email">
+					<button type="submit" class="button_1">Subscribe</button>
+				</form>
+
+			</div>
 			
 		</section>
 
+<!--- Guides or Blogs -->
 		<section id="main">
+			<div class="container">
+				<article id="main-col">
+					<h1 class="page-title">Blogs</h1>
+<!---SearchBar -->
+					<input type="text" name="searchBar" class="logged-in" id="searchBar" placeholder="Search for blogs here..."/>
+<!--- DIsplay the blogs dynamically-->
+					<ul class="guides" id="services"></ul>
+					
+				</article>
+<!--- Creating or posting blogs-->
+				<aside id="sidebar">
+					<div class="dark">
+						<h3>Post your blogs</h3>
+
+						<form class="quote" id="create-form">
+					
+							<div class="field">
+								<label>Title</label><br>
+								<input type="text" id="title" required>
+							</div>
+							
+							<div class="field">
+								<label>Content</label><br>
+								<textarea id="content" placeholder="Write your content..."></textarea>
+							</div>
+							<button class="button_1">Post</button>
+
+						</form>						
+					</div>					
+				</aside>
+
+			</div>
 			
 			
 		</section>
+		<button class="open-button logged-in" onclick="openForm()">Chat</button>
+
+		<div class="chat-popup" id="myForm">
+			<form action="/action_page.php" class="form-container">
+			<h1>Chat</h1>
+			<label for="msg"><b>Message</b></label>
+			<textarea placeholder="Type your message..." name="msg" required></textarea>
+
+			<button type="submit" class="btn">Send</button>
+			<button type="button" class="btn cancel" onclick="closeForm()">Close</button>	
+			</form>
+		</div>
 
 		<footer>
 			<p>
@@ -52,13 +105,21 @@
 			</p>
 		</footer>
 
-	<!--- Scripts --->
+	<!--- Scripts -->
 	<script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-auth.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-firestore.js"></script>
 	<script src="firebase.js"></script>
 	<script src="logout.js"></script>
 	<script src="blogs.js"></script>
+	<script>
+		function openForm() {
+			document.getElementById("myForm").style.display = "block";
+		}
+		function closeForm() {
+			document.getElementById("myForm").style.display = "none";
+		}
+	</script>
 
 	</body>
 </html>

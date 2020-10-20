@@ -27,18 +27,10 @@ const setupUI = (user) => {
 auth.onAuthStateChanged(user => {
 	if (user) {
 		setupUI(user);
-
-		//quoteList.style.display = 'block';
-		//get data
-		//db.collection('post').onSnapshot(snapshot => {
-		//setupGuides(snapshot.docs);		
-		//}, err => {
-		//	console.log(err.message)
-		//});
+		quoteList.style.display = 'block';
 	} else {
 		setupUI();
-		//setupGuides([]);
-		//quoteList.style.display = 'none';
+		quoteList.style.display = 'none';
 
 	}
 });
