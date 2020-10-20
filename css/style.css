@@ -29,6 +29,16 @@ ul{
 	padding-right: 20px;
 	color: #ffffff;
 }
+.button_2 {
+	width: 100%;
+	height: 38px;
+	background: #e8491d;
+	border: 0;
+	padding-left: 20px;
+	padding-right: 20px;
+	color: #ffffff;
+}
+
 
 .dark{
 	padding: 15px;
@@ -52,6 +62,7 @@ header a{
 	text-decoration: none;
 	text-transform: uppercase;
 	font-size: 16px;
+
 }
 
 /* Horizontal menu*/
@@ -59,6 +70,7 @@ header li {
 	flow: left;
 	display: inline;
 	padding: 0 20px 0 20px;
+
 }
 header .account-details {
 	
@@ -68,6 +80,7 @@ header .account-details {
 
 
 }
+
 header #branding{
 	float: left;
 }
@@ -105,7 +118,7 @@ header #branding h1{
  	overflow: hidden;
  	
  }
- #showcase2 {
+#showcase2 {
 	 min-height: 400px;
     background: url('../img/about.jpg') no-repeat center center fixed;
  	background-size: 100% 100%; 
@@ -122,6 +135,8 @@ header #branding h1{
  #showcase2 p{
  	font-size: 20px;
  }
+
+
 .slider{
 	width: 100%;
 	height: 100%;
@@ -132,6 +147,7 @@ header #branding h1{
 	width: 500%;
 	height: 500px;
 	display: flex;
+	
 }
 .slides input{
 	display: none;
@@ -212,17 +228,7 @@ header #branding h1{
 #radio4:checked ~ .navigation-auto .auto-btn4{
 	background: #40D3DC;
 }
-/*
- #showcase h1{
- 	margin-top: 100px;
- 	font-size: 55px;
- 	margin-bottom: 10px;
- }
 
- #showcase p{
- 	font-size: 20px;
- }
-*/
 /*Newsletter */
 
  #newsletter{
@@ -246,6 +252,15 @@ header #branding h1{
  	width: 250px;
  }
 
+/*Searchbar*/
+#searchBar {
+	margin-bottom: 10px;
+	padding: 4px;
+ 	height: 25px;
+ 	width: 250px;
+ 	border-radius: 3px;
+ 	font-size: 12px;
+}
  /* Boxes */
  #boxes {
  	margin-top: 20px;
@@ -258,6 +273,7 @@ header #branding h1{
  }
  #boxes .box img{
  	width: 90px;
+ 	height: 120px;
  }
 /*Sidebar*/
 aside#sidebar {
@@ -303,3 +319,50 @@ article#main-col {
 	}
 }
 */
+
+/* Services*/
+ul#services li{
+	list-style: none;
+	padding: 20px;
+	border: #cccccc solid 1px;
+	margin-bottom: 5px;
+	background: #e6e6e6;
+}
+
+aside#sidebar .quote input, aside#sidebar .quote textarea {
+	width: 90%;
+	padding: 5px;
+}
+
+/*meida queries*/
+@media(max-width: 768px){
+	header #branding,
+	header nav,
+	header nav li,
+	#newsletter h1,
+	#newsletter form,
+	#boxes .box,
+	article#main-col,
+	aside#sidebar{
+		float: none;
+		text-align: center;
+		width: 100%;
+	}
+	header{
+		padding-bottom: 20px;
+	}
+	#showcase h1{
+		margin-top: 40px;
+	}
+
+	#newsletter button, .quote button {
+		display: block;
+		width: 100%;
+	}
+
+	#newsletter form input[type="email"], .quote input, .quote textarea{
+		width: 100%;
+		margin-bottom: 5px;
+	}
+
+}
