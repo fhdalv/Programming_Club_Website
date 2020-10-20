@@ -28,7 +28,7 @@ auth.onAuthStateChanged(user => {
 		setupUI(user);
 		quoteList.style.display = 'block';
 		//get data
-		db.collection('post').onSnapshot(snapshot => {
+		db.collection('post').orderBy("created_by").onSnapshot(snapshot => {
 		setupGuides(snapshot.docs);				
 		}, err => {
 			console.log(err.message)
