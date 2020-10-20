@@ -63,6 +63,7 @@ createForm.addEventListener('submit', (e) => {
 		thread: createForm['content'].value
 	}).then(() => {
 		createForm.reset();
+		alert("Success!");
 	}).catch(err => {
 		console.log(err.message)
 	})
