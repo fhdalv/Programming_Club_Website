@@ -3,15 +3,13 @@ const loggedInLinks = document.querySelectorAll('.logged-in');
 
 const setupUI = (user) => {
 	if(user) {
-		//acount info
-		//const html = `
-		//<div>Welcome, ${user.email}</div>`;
-		//accountDetails.innerHTML = html;
 		db.collection('users').doc(user.uid).get().then(doc => {
+			save_user = doc.data().bio;
+			console.log(save_user);
 			const html = `
 			<div>Welcome back,<span class="highlight"> ${doc.data().bio} </span></div>`;
 			accountDetails.innerHTML = html;
-		})
+			})
 		
 
 		loggedInLinks.forEach(item => item.style.display = 'inline');
@@ -26,10 +24,19 @@ const setupUI = (user) => {
 
 auth.onAuthStateChanged(user => {
 	if (user) {
+
 		setupUI(user);
 		quoteList.style.display = 'block';
+		//get data
+		db.collection('post').onSnapshot(snapshot => {
+		setupGuides(snapshot.docs);				
+		}, err => {
+			console.log(err.message)
+		});
 	} else {
+
 		setupUI();
+		setupGuides([]);
 		quoteList.style.display = 'none';
 
 	}
@@ -45,3 +52,18 @@ logout.addEventListener('click', (e) =>{
 		alert("Succesfully logged out!");
 	});
 });
+
+//create new blog
+const createForm = document.querySelector('#create-form');
+createForm.addEventListener('submit', (e) => {
+	e.preventDefault();
+	db.collection('post').add({
+		created_by: save_user,
+		name: createForm['title'].value,
+		thread: createForm['content'].value
+	}).then(() => {
+		createForm.reset();
+	}).catch(err => {
+		console.log(err.message)
+	})
+})
