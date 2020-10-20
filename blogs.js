@@ -17,8 +17,8 @@ const setupGuides = (data) => {
 		const li = `
 		<li>
 			<a>
-				<h2>Created by: ${guide.created_by}</h2>
-				<h3>${guide.name}</h3>
+				<h2>Title: ${guide.name}</h2>
+				<h3>Created by: ${guide.created_by}</h3>
 				<p>${guide.thread}</p>
 			</a>
 		</li><br>
