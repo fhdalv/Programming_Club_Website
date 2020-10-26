@@ -8,7 +8,7 @@ const searchBar = document.getElementById('searchBar');
 
 let guide = [];
 
-//setup guides
+
 const setupGuides = (data) => {
 	if (data.length) {
 	let html ='';
@@ -43,6 +43,27 @@ newsLetter.addEventListener('submit', (e) => {
 	checkEmail();
 	newsLetter.reset();
 })
+
+searchBar.addEventListener('keyup', (e) => {
+	const input = e.target.value.toUpperCase();
+	console.log(input);
+	var ul, li, a, i;
+   // input = document.getElementById("myInput");
+   // filter = input.value.toUpperCase();
+    ul = document.getElementById("services");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        if (a.innerHTML.toUpperCase().indexOf(input) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+
+        }
+    }
+});
+	//console.log(guide.name);
+	//const filtered = setupGuides.filter((c))
 
 function checkEmail() {
 

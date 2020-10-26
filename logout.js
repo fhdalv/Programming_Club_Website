@@ -27,7 +27,7 @@ auth.onAuthStateChanged(user => {
 
 		setupUI(user);
 		quoteList.style.display = 'block';
-		//get data
+		
 		db.collection('post').orderBy("created_by").onSnapshot(snapshot => {
 		setupGuides(snapshot.docs);				
 		}, err => {
@@ -53,7 +53,7 @@ logout.addEventListener('click', (e) =>{
 	});
 });
 
-//create new blog
+
 const createForm = document.querySelector('#create-form');
 createForm.addEventListener('submit', (e) => {
 	e.preventDefault();
