@@ -1,6 +1,7 @@
 const loggedOutLinks = document.querySelectorAll('.logged-out');
 const loggedInLinks = document.querySelectorAll('.logged-in');
 
+//showing the nav bar pages based on the user's state
 const setupUI = (user) => {
 	if(user) {
 		db.collection('users').doc(user.uid).get().then(doc => {
@@ -21,7 +22,7 @@ const setupUI = (user) => {
 	}
 }
 
-
+//chcking if the user is logged-in or out
 auth.onAuthStateChanged(user => {
 	if (user) {
 
@@ -42,7 +43,7 @@ auth.onAuthStateChanged(user => {
 	}
 });
 
-
+//logging out the user
 const logout = document.querySelector('#logout');
 
 logout.addEventListener('click', (e) =>{
@@ -53,7 +54,7 @@ logout.addEventListener('click', (e) =>{
 	});
 });
 
-
+//creating the blog and posting it to firebase
 const createForm = document.querySelector('#create-form');
 createForm.addEventListener('submit', (e) => {
 	e.preventDefault();

@@ -4,7 +4,7 @@ const email = document.getElementById('signup-email');
 const pass1 = document.getElementById('signup-password1');
 const pass2 = document.getElementById('signup-password2');
 
-
+//registering users to firebase
 form.addEventListener('submit', (e) => {
 	e.preventDefault();
 	checkInputs();
@@ -23,6 +23,7 @@ form.addEventListener('submit', (e) => {
 
 });
 
+// validation of the inputs
 function checkInputs() {
  const usernameVal = username.value.trim();
  const emailVal =	email.value.trim();
@@ -63,7 +64,7 @@ function checkInputs() {
  			setSuccessFor(pass2);
  			}
 }
-
+//setting up error messages
 function setErrorFor(input, message) {
 	const formControl = input.parentElement; //input-field class
 	const small = formControl.querySelector('small');

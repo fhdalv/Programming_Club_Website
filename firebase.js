@@ -1,4 +1,4 @@
-
+//installing and importing firebase API here
 
   var firebaseConfig = {
     apiKey: "AIzaSyCeMOx-mlKP7SMdIHBh9MSmiTFchaL-dLQ",
