@@ -8,7 +8,7 @@ const searchBar = document.getElementById('searchBar');
 
 let guide = [];
 
-
+//setting up the html blog form to show it dynamically
 const setupGuides = (data) => {
 	if (data.length) {
 	let html ='';
@@ -44,6 +44,11 @@ newsLetter.addEventListener('submit', (e) => {
 	newsLetter.reset();
 })
 
+//searchbar functionality
+//some of useful links that I looked up
+//https://www.jamesqquick.com/blog/build-a-javascript-search-bar
+//https://www.geeksforgeeks.org/search-bar-using-html-css-and-javascript/
+
 searchBar.addEventListener('keyup', (e) => {
 	const input = e.target.value.toUpperCase();
 	console.log(input);
@@ -65,6 +70,9 @@ searchBar.addEventListener('keyup', (e) => {
 	//console.log(guide.name);
 	//const filtered = setupGuides.filter((c))
 
+
+//email validation if the email is valid
+//https://www.w3resource.com/javascript/form/email-validation.php
 function checkEmail() {
 
  const emailVal =	email.value.trim();
