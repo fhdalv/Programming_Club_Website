@@ -43,11 +43,12 @@
 			        <div class="con_reg_header" >
 			           <h2 style="margin-right: 30px; color: #e8491d;">Contact Us</h2>
                        </div>
+                       
 			    <form action="POST" data-netlify="true" class="form" id="contact-form">
 
 				<div class="input-field">
 					<label for="fullname">Full Name</label>
-					<input type="text" id="fullname" placeholder="Enter your name">
+					<input type="text" id="fullname" name="fullname" placeholder="Enter your name">
 					<i class="fa fa-check-circle" ></i>
 					<i class="fa fa-exclamation-circle"></i>
 					<small>Error message</small>
@@ -55,14 +56,14 @@
 
 				<div class="input-field">
 					<label for="email">Email</label>
-					<input type="text" id="email" placeholder="Enter your email">
+					<input type="text" id="email" name="email" placeholder="Enter your email">
 					<i class="fa fa-check-circle" ></i>
 					<i class="fa fa-exclamation-circle"></i>
 					<small>Error message</small>
 				</div>
 				<div class="input-field">
 					<label for="message">Message</label>
-					<textarea placeholder="Enter your message"></textarea>
+					<textarea name="message" placeholder="Enter your message"></textarea>
 					<i class="fa fa-check-circle" ></i>
 					<i class="fa fa-exclamation-circle"></i>
 					<small>Error message</small>
