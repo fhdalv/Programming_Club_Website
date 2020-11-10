@@ -135,7 +135,22 @@ header #branding h1{
  #showcase2 p{
  	font-size: 20px;
  }
-
+ 
+ #showcase3{
+    min-height: 600px;
+    background: url('../img/contact.jpg') no-repeat center center fixed;
+ 	background-size: 100% 100%; 
+ 	text-align: center;
+ 	color: #ffffff;
+ }
+ #showcase3 h1{
+ 	margin-top: 10px;
+ 	font-size: 20px;
+ 	margin-bottom: 10px;
+ }
+ #showcase3 p{
+ 	font-size: 20px;
+ }
 
 .slider{
 	width: 100%;
@@ -286,6 +301,9 @@ article#main-col {
 	float: left;
 	width: 65%;
 }
+article#main-col2 {
+	width: 100%;
+}
 
  footer {
  	padding: 20px;
@@ -368,4 +386,16 @@ aside#sidebar .quote input, aside#sidebar .quote textarea {
 		margin-bottom: 5px;
 	}
 
+}
+/*Event*/
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
 }
