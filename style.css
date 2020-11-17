@@ -1,0 +1,72 @@
+
+#background {
+  background-image: url("assets/background.gif");
+  background-repeat: no-repeat center center fixed;
+  background-size: cover;
+  height: 700px;
+  width: 1500px;
+  
+}
+
+#hero {
+    background-image: url("assets/hero.png");
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 640px;
+    left: 760px;
+
+}
+
+.enemy{
+    background-image: url("assets/bonus.png");
+    height: 50px;
+    width: 50px;
+    position: absolute;
+
+}
+#missiles {
+    height: 700px;
+    width: 1500px;
+    position: absolute;
+}
+.missile {
+    background-image: url("assets/missile.png");
+    height: 16px;
+    width: 10px;
+    position: absolute;
+
+}
+#enemies {
+    height: 700px;
+    width: 1500px;
+    position: absolute;
+}
+
+.button{
+        background-color: darkslategray;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 10px;
+        margin: 4px 2px;
+        cursor: pointer;
+        position: absolute;
+          left: 92%;
+          top: 2%;
+             
+}
+
+.button1 {
+    background-color: #8A2BE2;
+    color: black;
+    border: 1px solid #e7e7e7;
+    border-radius: 8px;
+    width: 100px;
+  
+  }
+  
+  .button1:hover {background-color: #00008B;}

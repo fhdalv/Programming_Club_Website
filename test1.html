@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entry Page</title>
+    <link rel="stylesheet" href="./css/style.css">
+	<style>
+section {
+  background-image: url("assets/back4.gif");
+    background-repeat: no-repeat center center fixed; ;
+ 	 -webkit-background-size: cover;
+ 	background-size: cover;
+
+    min-height: 80vh;
+	width: 100%
+	margin: 0;
+}
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  position: absolute;
+	left: 50%;
+	top: 95%;
+	transform: translateX(-50%) translateY(-50%);
+
+}
+
+
+.button1 {
+  background-color: #8A2BE2;
+  color: black;
+  border: 2px solid #e7e7e7;
+  border-radius: 12px;
+  width: 150px;
+
+}
+
+.button1:hover {background-color: #00008B;}
+
+
+#but {
+	position: absolute;
+	left: 50%;
+	top: 80%;
+	transform: translateX(-50%) translateY(-50%);
+
+}
+/* Style the header */
+.head {
+  padding: 20px;
+  text-align: center;
+}
+
+.imageWithText{
+	width:50px;
+	height:50px;
+	vertical-align: middle;
+}
+
+.inline {
+  display: inline;
+  text-shadow: 3px 2px red;
+
+}
+
+</style>
+</head>
+<body>
+	<header>
+			<div class="container"> 
+				<div id="branding">
+					<h1>BC <span class="highlight">Programming</span> Club</h1>
+				</div>
+				<nav>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="about.html">About</a></li>
+						<li><a href="services.html">Blogs</a></li>
+						<li><a href="sort.html">Sort</a></li>
+						<li class="logged-out"><a href="login.html">Sign In</a></li>
+						<li class="logged-out"><a href="register.html">Register</a></li>
+						<li class="logged-in" ><a href="#" id="logout">Logout</a></li>
+						<li class="logged-in current" ><a href="test1.html">Game</a></li>
+						<li class="logged-in" ><div class="account-details"></div></li>
+
+					</ul>
+				</nav>
+			</div>
+	</header>
+
+<section>
+<div class="head">
+<h1 style="color:LightGray; text-shadow: 4px 3px #8B0000;">College Invaders</h1>
+</div>
+	<p class="head" style="color:LightGray;">HIGHEST SCORE:0</p>
+	<p class="head" style="color:LightGray;">
+	<img class = "imageWithText" src="assets/alien.png" alt=""> X 20 Points<br><br>
+	<img class = "imageWithText" src="assets/alien3.png" alt=""> X 30 Points<br><br>
+	<img class = "imageWithText" src="assets/alien.png" alt=""> X 100 Points
+	</p>
+<!--	<p  style="color:#7FFF00;   font-size: 30px;">Choose Your Spaceship To Begin!</p>
+	<form action="test2.html">
+		&nspb;
+		&nspb;
+		&nspb;
+		<input type="image" src="assets/sp2.jpg" alt="Submit" width="50" height="50" >
+	
+	</form>
+	
+	<h2 class="inline" style="color:LightGray; letter-spacing: 3px;">Start Game</h2>
+	<button class="button button1" onclick="self.close()">Exit</button>-->
+   <button class="button button1" id="but" onclick="document.location = 'test2.html'"target="_self">Start Game</button>
+ 
+
+</section>
+
+<footer>
+			<p>
+				<small>All Rights Reserved.</small><br>
+				<small >Designed with</small>
+				<img  src="./img/heart354.gif">
+				<small>by BC Programming Club Team</small>
+			</p>
+</footer>
+<!--- Scripts --->
+	<script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-firestore.js"></script>
+	<script src="firebase.js"></script>
+	<script src="logout.js"></script>
+	<script src="blogs.js"></script>
+
+</body>
+</html

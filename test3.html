@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exit Page</title>
+  <link rel="stylesheet" href="./css/style.css">
+	<style>
+body {
+  background-image: url("assets/back3.jpg");
+   background-repeat: no-repeat center center fixed; ;
+ 	 -webkit-background-size: cover;
+ 	background-size: cover;
+
+}
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+
+.button1 {
+  background-color: #8A2BE2;
+  color: black;
+  border: 2px solid #e7e7e7;
+  border-radius: 12px;
+  width: 150px;
+
+}
+
+.button1:hover {background-color: #00008B;}
+
+
+
+
+
+
+#but {
+	position: absolute;
+	left: 50%;
+	top: 80%;
+	transform: translateX(-50%) translateY(-50%);
+
+}
+.inline {
+  display: inline;
+  text-shadow: 3px 2px red;
+
+}
+
+
+</style>
+</head>
+<body>
+
+<header>
+      <div class="container"> 
+        <div id="branding">
+          <h1>BC <span class="highlight">Programming</span> Club</h1>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Blogs</a></li>
+            <li><a href="sort.html">Sort</a></li>
+            <li class="logged-out"><a href="login.html">Sign In</a></li>
+            <li class="logged-out"><a href="register.html">Register</a></li>
+            <li class="logged-in" ><a href="#" id="logout">Logout</a></li>
+            <li class="logged-in current" ><a href="test3.html">Game</a></li>
+            <li class="logged-in" ><div class="account-details"></div></li>
+
+          </ul>
+        </nav>
+      </div>
+  </header>
+  <section>
+<div id="but">
+  <h2 id="result" class="inline" style="color:LightGray; letter-spacing: 3px;"></h2>&nbsp;
+  &nbsp;&nbsp;&nbsp;
+  <h2 id="result2"class="inline" style="color:LightGray; letter-spacing: 3px;"></h2><br><br>
+  <br><br>
+  <button class="button button1" onclick="document.location = 'test1.html'"target="_self">Restart</button>&nbsp;
+  &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+  &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+  <button class="button button1" onclick="self.close()">Exit</button>
+
+</div>
+</section>
+<script>
+ // document.getElementById("result").innerHTML = "Your Score: " + localStorage.getItem("value");
+  //document.getElementById("result2").innerHTML = "Highest Score: " + localStorage.getItem("value");
+</script>
+</body>
+</html>
