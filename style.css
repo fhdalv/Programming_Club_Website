@@ -19,7 +19,7 @@
 }
 
 .enemy{
-    background-image: url("assets/bonus.png");
+    background-image: url("assets/alien3.png");
     height: 50px;
     width: 50px;
     position: absolute;

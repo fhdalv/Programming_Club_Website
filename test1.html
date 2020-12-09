@@ -84,16 +84,16 @@ section {
 				</div>
 				<nav>
 					<ul>
-						<li><a href="index.html">Home</a></li>
-						<li><a href="about.html">About</a></li>
-						<li><a href="services.html">Blogs</a></li>
-						<li><a href="sort.html">Sort</a></li>
-						<li class="logged-out"><a href="login.html">Sign In</a></li>
-						<li class="logged-out"><a href="register.html">Register</a></li>
-						<li class="logged-in" ><a href="#" id="logout">Logout</a></li>
-						<li class="logged-in current" ><a href="test1.html">Game</a></li>
-						<li class="logged-in" ><div class="account-details"></div></li>
-
+			            <li><a href="index.html">Home</a></li>
+			            <li><a href="about.html">About</a></li>
+			            <li><a href="services.html">Blogs</a></li>
+			            <li><a href="event.html">Events</a></li>
+						<li><a href="contact.html">Contact</a></li>
+			            <li class="logged-out"><a href="login.html">Sign In</a></li>
+			            <li class="logged-out"><a href="register.html">Register</a></li>
+			            <li class="logged-in" ><a href="#" id="logout">Logout</a></li>
+			            <li class="logged-in current" ><a href="test3.html">Game</a></li>
+			            <li class="logged-in" ><div class="account-details"></div></li>
 					</ul>
 				</nav>
 			</div>
@@ -103,9 +103,8 @@ section {
 <div class="head">
 <h1 style="color:LightGray; text-shadow: 4px 3px #8B0000;">College Invaders</h1>
 </div>
-	<p class="head" style="color:LightGray;">HIGHEST SCORE:0</p>
+	<p id="val3" class="head" style="color:LightGray;">HIGHEST SCORE:0</p>
 	<p class="head" style="color:LightGray;">
-	<img class = "imageWithText" src="assets/alien.png" alt=""> X 20 Points<br><br>
 	<img class = "imageWithText" src="assets/alien3.png" alt=""> X 30 Points<br><br>
 	<img class = "imageWithText" src="assets/alien.png" alt=""> X 100 Points
 	</p>
@@ -140,6 +139,9 @@ section {
 	<script src="firebase.js"></script>
 	<script src="logout.js"></script>
 	<script src="blogs.js"></script>
+	<script>
+		  document.getElementById("val3").innerHTML = "Highest Score: " + localStorage.getItem("value");
+	</script>
 
 </body>
 </html

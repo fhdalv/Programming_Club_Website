@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="background">
+    <p id="score" style="color:LightGray; font-size: large;"></p>
+    <button class="button button1" onclick="document.location = 'test2.html'"target="_self">Restart</button>
+    <div id="hero"> </div>
+    <div id="missiles"></div>
+    <div id="enemies"></div>
+  </div>
+
+  <!--Javascript
+  
+  <button onclick="document.location = 'test3.html'"target="_self">Restart</button>
+  -->
+
+  <script>
+    var hero ={
+      top: 640,
+      left: 760
+    };
+
+    var missiles =[];
+    var enemies = [
+      {left: 100, top: 10},
+      {left: 200, top: 10},
+      {left: 300, top: 10},
+      {left: 400, top: 10},
+      {left: 500, top: 10},
+      {left: 600, top: 10},
+      {left: 700, top: 10},
+      {left: 800, top: 10},
+      {left: 900, top: 10},
+      {left: 1000, top: 10},
+      {left: 1100, top: 10},
+      {left: 1200, top: 10},
+      {left: 1300, top: 10},
+      {left: 100, top: 80},
+      {left: 200, top: 80},
+      {left: 300, top: 80},
+      {left: 400, top: 80},
+      {left: 500, top: 80},
+      {left: 600, top: 80},
+      {left: 700, top: 80},
+      {left: 800, top: 80},
+      {left: 900, top: 80},
+      {left: 1000, top: 80},
+      {left: 1100, top: 80},
+      {left: 1200, top: 80},
+      {left: 1300, top: 80},
+      {left: 100, top: 150},
+      {left: 200, top: 150},
+      {left: 300, top: 150},
+      {left: 400, top: 150},
+      {left: 500, top: 150},
+      {left: 600, top: 150},
+      {left: 700, top: 150},
+      {left: 800, top: 150},
+      {left: 900, top: 150},
+      {left: 1000, top: 150},
+      {left: 1100, top: 150},
+      {left: 1200, top: 150},
+      {left: 1300, top: 150}
+    ];
+
+    var myscore = 0;
+ 
+
+  function sound(src) {
+  this.sound = document.createElement("audio");
+  this.sound.src = src;
+  this.sound.setAttribute("preload", "auto");
+  this.sound.setAttribute("controls", "none");
+  this.sound.style.display = "none";
+  document.body.appendChild(this.sound);
+  this.play = function(){
+    this.sound.play();
+  }
+  this.stop = function(){
+    this.sound.pause();
+  }
+}
+var mySound;
+var shoot;
+mySound = new sound("assets/invaderkilled.wav");
+shoot = new sound("assets/shoot.wav");
+    document.onkeydown = function(e) {
+      if(e.keyCode === 37 && hero.left > 20){
+        hero.left = hero.left - 20;
+      //  console.log(hero.left); 20
+        moveHero();
+      }
+      else if (e.keyCode === 39 && hero.left < 1460){
+        hero.left = hero.left + 20;
+      //  console.log(hero.left); 1460
+
+        moveHero();
+      }
+      else if (e.keyCode === 32){
+        missiles.push({
+          left: hero.left + 12,
+          top: hero.top - 70
+        })
+        shoot.play();
+        drawMissiles();
+      }
+    }
+
+    function moveHero(){
+      document.getElementById('hero').style.left = hero.left + "px";
+    }
+  
+    function drawMissiles(){
+      document.getElementById('missiles').innerHTML = "";
+      for(var missile = 0; missile < missiles.length; missile++){
+        document.getElementById('missiles').innerHTML += `<div class='missile' style='left:${missiles[missile].left}px; top:${ missiles[missile].top}px;'></div>`
+
+      }
+    }
+
+    function moveMissiles(){
+      for( var missile = 0; missile < missiles.length; missile++){
+        missiles[missile].top = missiles[missile].top - 5;
+      }
+    }
+ function drawEnemies() {
+      document.getElementById('enemies').innerHTML = "";
+      for(var enemy = 0; enemy < enemies.length; enemy++){
+        document.getElementById('enemies').innerHTML += `<div class='enemy' style='left:${enemies[enemy].left}px; top:${ enemies[enemy].top}px;'></div>`
+      }
+    }
+
+    function moveEnemies(){
+    
+      for( var enemy = 0; enemy < enemies.length; enemy++){
+       
+        enemies[enemy].top = enemies[enemy].top + 2;
+     
+         
+      }
+    }
+
+    function collision(){
+      for(var enemy = 0; enemy < enemies.length; enemy++){
+        for(var missile = 0; missile < missiles.length; missile++){
+          if((missiles[missile].top <= enemies[enemy].top + 50 ) && 
+             (missiles[missile].top >= enemies[enemy].top) && 
+             (missiles[missile].left >= enemies[enemy].left) &&
+             (missiles[missile].left <= enemies[enemy].left + 50)){
+               
+               mySound.play();
+               enemies.splice(enemy, 1);
+               missiles.splice(missile, 1);
+               myscore = myscore + 100;
+          }
+              
+
+          }
+        }
+      }
+
+      function collision2(){
+
+      for(var enemy = 0; enemy < enemies.length; enemy++){
+          if( enemies[enemy].top == hero.top){
+            window.location.href = "test3.html";
+          }
+        }
+        if (enemies === undefined || enemies.length == 0 || enemies === null) {
+            
+            window.location.href = "test3.html";
+            
+          }
+      }
+
+  
+
+    function writeScore(){
+      document.getElementById("score").innerHTML = "Score: " + myscore;
+      localStorage.setItem("value", myscore);
+    }
+
+
+    function gameLoop(){
+      setTimeout(gameLoop, 100)
+      moveMissiles();
+      drawMissiles();
+      drawEnemies();
+      moveEnemies();
+      collision();
+      writeScore();
+      collision2();
+     
+      
+    }
+    gameLoop();
+    function gameLoop2(){
+      setTimeout(gameLoop2, 1000)
+     
+      
+      
+    }
+    gameLoop2();
+  
+
+  </script>
+
+
+</body>
+</html>
